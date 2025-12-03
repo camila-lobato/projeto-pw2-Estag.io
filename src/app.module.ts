@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import {  MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EmpresaModule } from './modules/empresa/empresa.module';
@@ -40,15 +39,4 @@ export class AppModule implements NestModule {
       .forRoutes('*');
   }
 }
-=======
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 
-@Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
-})
-export class AppModule {}
->>>>>>> aeb53677f1a49ad6cf607ac7a24d83a9ebc0bc2a

@@ -16,10 +16,4 @@ export class AppController {
   @Render('sobre')
   sobre() {
     return { titulo: this.appService.getTitulo() };
-  }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> aeb53677f1a49ad6cf607ac7a24d83a9ebc0bc2a
-}
+  }}
