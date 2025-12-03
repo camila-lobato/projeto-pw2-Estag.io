@@ -1,0 +1,52 @@
+<h2>Atualização de Empresa</h2>
+
+{{#if error}}
+<div class="alert alert-danger">
+  {{#each error}}
+    <p>{{this.message}}</p>
+  {{/each}}
+</div>
+{{/if}}
+
+<form method="post" action="/empresa/{{empresa.id}}/editar/salvar?_method=put">
+  <div class="row">
+    <div class="col-6">
+      <label>Nome</label>
+      <input type="text" name="nome" class="form-control" value="{{getValue old.nome empresa.nome}}">
+    </div>
+
+    <div class="col-6">
+      <label>CNPJ</label>
+      <input type="text" name="cnpj" class="form-control" value="{{getValue old.cnpj empresa.cnpj}}">
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-6">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" value="{{getValue old.email empresa.email}}">
+    </div>
+
+    <div class="col-6">
+      <label>Telefone</label>
+      <input type="text" name="telefone" class="form-control" value="{{getValue old.telefone empresa.telefone}}">
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <label>Site</label>
+      <input type="text" name="site" class="form-control" value="{{getValue old.site empresa.site}}">
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <label>Descrição</label>
+      <textarea name="descricao" rows="4" class="form-control">{{getValue old.descricao empresa.descricao}}</textarea>
+    </div>
+  </div>
+
+  <button class="btn btn-primary mt-3">Salvar</button>
+  <a href="/empresa" class="btn btn-secondary mt-3">Cancelar</a>
+</form>

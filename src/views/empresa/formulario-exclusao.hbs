@@ -1,0 +1,20 @@
+<div class="card shadow mb-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-danger">Excluir Empresa</h6>
+  </div>
+  <div class="card-body">
+    
+    <p>Tem certeza que deseja excluir a empresa <strong>{{empresa.nome}}</strong>?</p>
+
+    <form action="/empresa/{{empresa.id}}/excluir?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-danger">
+        <i class="fas fa-trash"></i> Excluir
+      </button>
+
+      <a href="/empresa" class="btn btn-secondary">
+        Cancelar
+      </a>
+    </form>
+
+  </div>
+</div>

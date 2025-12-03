@@ -1,0 +1,8 @@
+<h2>Excluir Estudante</h2>
+
+<p>Deseja realmente excluir <b>{{estudante.nome}}</b>?</p>
+
+<form method="post" action="/estudante/{{estudante.id}}/excluir-confirmado">
+  <button class="btn btn-danger">Sim, excluir</button>
+  <a href="/estudante" class="btn btn-secondary">Cancelar</a>
+</form>

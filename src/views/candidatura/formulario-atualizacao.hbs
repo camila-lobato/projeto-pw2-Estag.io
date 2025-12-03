@@ -1,0 +1,38 @@
+<h3>Atualizar Candidatura</h3>
+
+<form method="post" action="/candidatura/{{candidatura.id}}/atualizacao-salvar">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <label>Estudante</label>
+      <select name="estudante" class="form-control">
+        {{#each estudantes}}
+          <option value="{{this.id}}"
+            {{#if (eq this.id ../candidatura.estudante.id)}}selected{{/if}}>
+            {{this.nome}} - {{this.curso}}
+          </option>
+        {{/each}}
+      </select>
+    </div>
+
+    <div class="col-md-6">
+      <label>Vaga</label>
+      <select name="vaga" class="form-control">
+        {{#each vagas}}
+          <option value="{{this.id}}"
+            {{#if (eq this.id ../candidatura.vaga.id)}}selected{{/if}}>
+            {{this.titulo}} - {{this.empresa.nome}}
+          </option>
+        {{/each}}
+      </select>
+    </div>
+
+  </div>
+
+  <div class="mt-4">
+    <button class="btn btn-primary">Atualizar</button>
+    <a href="/candidatura" class="btn btn-secondary">Cancelar</a>
+  </div>
+
+</form>

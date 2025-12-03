@@ -1,0 +1,16 @@
+<h3>Confirmar Exclusão</h3>
+
+<div class="alert alert-danger">
+  Tem certeza que deseja excluir esta candidatura?
+</div>
+
+<ul>
+  <li><b>Estudante:</b> {{candidatura.estudante.nome}}</li>
+  <li><b>Vaga:</b> {{candidatura.vaga.titulo}}</li>
+  <li><b>Empresa:</b> {{candidatura.vaga.empresa.nome}}</li>
+</ul>
+
+<form method="post" action="/candidatura/{{candidatura.id}}/excluir-confirmado">
+  <button class="btn btn-danger">Excluir</button>
+  <a href="/candidatura" class="btn btn-secondary">Cancelar</a>
+</form>

@@ -1,0 +1,145 @@
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800">Painel Administrativo - Estag.io</h1>
+</div>
+
+<!-- Hero Banner -->
+<div class="card bg-gradient-info text-white shadow mb-4">
+  <div class="card-body d-flex flex-column flex-md-row align-items-center justify-content-between">
+    <div>
+      <h2 class="font-weight-bold mb-2">Bem-vindo(a) ao Estag.io</h2>
+      <p class="mb-3">
+        Gerencie estudantes, empresas, vagas e candidaturas em um único lugar.
+      </p>
+      <a href="/candidatura" class="btn btn-light btn-icon-split btn-sm">
+        <span class="icon text-gray-600">
+          <i class="fas fa-clipboard-list"></i>
+        </span>
+        <span class="text">Gerenciar candidaturas</span>
+      </a>
+    </div>
+    <div class="mt-3 mt-md-0">
+      <img src="/img/graduation-cap.webp" alt="Logo Estag.io" class="img-fluid" style="width: 120px;">
+    </div>
+  </div>
+</div>
+
+<!-- CARDS CONTADORES -->
+<div class="row">
+
+  <!-- Empresas -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+              Empresas cadastradas
+            </div>
+            <div class="h3 mb-0 font-weight-bold text-gray-800">
+              {{contadores.empresas}}
+            </div>
+            <a href="/empresa" class="small text-primary d-block mt-2">
+              Gerenciar empresas <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div>
+            <i class="fas fa-building fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estudantes -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-success shadow h-100 py-2">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+              Estudantes cadastrados
+            </div>
+            <div class="h3 mb-0 font-weight-bold text-gray-800">
+              {{contadores.estudantes}}
+            </div>
+            <a href="/estudante" class="small text-success d-block mt-2">
+              Gerenciar estudantes <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div>
+            <i class="fas fa-user-graduate fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vagas -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+              Vagas cadastradas
+            </div>
+            <div class="h3 mb-0 font-weight-bold text-gray-800">
+              {{contadores.vagas}}
+            </div>
+            <a href="/vaga" class="small text-warning d-block mt-2">
+              Gerenciar vagas <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div>
+            <i class="fas fa-briefcase fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Candidaturas -->
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-danger shadow h-100 py-2">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <div>
+            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+              Candidaturas
+            </div>
+            <div class="h3 mb-0 font-weight-bold text-gray-800">
+              {{contadores.candidaturas}}
+            </div>
+            <a href="/candidatura" class="small text-danger d-block mt-2">
+              Gerenciar candidaturas <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+          <div>
+            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA FINAL -->
+<div class="card shadow">
+  <div class="card-body d-flex flex-column flex-md-row align-items-center justify-content-between">
+    <div>
+      <h5 class="font-weight-bold text-gray-800">
+        Tudo pronto para administrar o sistema
+      </h5>
+      <p class="mb-1">
+        Escolha uma das opções acima para começar.
+      </p>
+    </div>
+    <div>
+      <a href="/vaga/novo" class="btn btn-primary">
+        <i class="fas fa-plus-circle"></i> Nova Vaga
+      </a>
+    </div>
+  </div>
+</div>
