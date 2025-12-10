@@ -1,0 +1,37 @@
+<h2>Editar Estudante</h2>
+
+<form method="post" action="/estudante/{{estudante.id}}/editar-salvar">
+
+  <div class="mb-3">
+    <label>Nome</label>
+    <input type="text" name="nome" class="form-control" value="{{estudante.nome}}">
+  </div>
+
+  <div class="mb-3">
+    <label>Email</label>
+    <input type="email" name="email" class="form-control" value="{{estudante.email}}">
+  </div>
+
+  <div class="mb-3">
+    <label>Curso</label>
+    <input type="text" name="curso" class="form-control" value="{{estudante.curso}}">
+  </div>
+
+  <div class="mb-3">
+    <label>Github</label>
+    <input type="text" name="github" class="form-control" value="{{estudante.github}}">
+  </div>
+
+  <div class="mb-3">
+    <label>Portfólio</label>
+    <input type="text" name="portfolio" class="form-control" value="{{estudante.portfolio}}">
+  </div>
+
+  <div class="mb-3">
+    <label>Biografia</label>
+    <textarea name="biografia" class="form-control">{{estudante.biografia}}</textarea>
+  </div>
+
+  <button class="btn btn-primary">Atualizar</button>
+
+</form>

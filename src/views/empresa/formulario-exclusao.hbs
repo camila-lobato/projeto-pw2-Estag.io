@@ -1,0 +1,8 @@
+<h2>Excluir Empresa</h2>
+
+<p>Deseja realmente excluir <b>{{empresa.nome}}</b>?</p>
+
+<form method="post" action="/empresa/{{empresa.id}}/excluir">
+  <button class="btn btn-danger">Sim, excluir</button>
+  <a href="/empresa" class="btn btn-secondary">Cancelar</a>
+</form>

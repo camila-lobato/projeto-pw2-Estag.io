@@ -1,0 +1,49 @@
+<h3>Empresas cadastradas</h3>
+
+<a href="/empresa/nova" class="btn btn-sm btn-primary mb-3">
+  <i class="fas fa-plus"></i> Nova Empresa
+</a>
+
+{{#if success}}
+  <div class="alert alert-success">
+    {{#each success}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{#if error}}
+  <div class="alert alert-danger">
+    {{#each error}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+<table class="table table-bordered mt-3">
+  <thead class="thead-light">
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>CNPJ</th>
+      <th>Email</th>
+      <th width="180">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each listaEmpresas}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.nome}}</td>
+      <td>{{this.cnpj}}</td>
+      <td>{{this.email}}</td>
+      <td>
+        <a href="/empresa/{{this.id}}/editar" class="btn btn-sm btn-primary">Editar</a>
+        <a href="/empresa/{{this.id}}/excluir" class="btn btn-sm btn-danger">Excluir</a>
+      </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>

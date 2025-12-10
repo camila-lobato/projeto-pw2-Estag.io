@@ -1,0 +1,52 @@
+<h3>Candidaturas cadastradas</h3>
+
+<a href="/candidatura/novo" class="btn btn-sm btn-primary mb-3">
+ Nova Candidatura
+</a>
+
+{{#if success}}
+  <div class="alert alert-success">
+    {{#each success}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{#if error}}
+  <div class="alert alert-danger">
+    {{#each error}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+<table class="table table-bordered mt-3">
+  <thead class="thead-light">
+    <tr>
+      <th>#</th>
+      <th>Estudante</th>
+      <th>Vaga</th>
+      <th>Empresa</th>
+      <th width="200">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each candidaturas}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.estudante.nome}}</td>
+      <td>{{this.vaga.titulo}}</td>
+      <td>{{this.vaga.empresa.nome}}</td>
+      <td>
+        <a href="/candidatura/{{this.id}}/atualizacao" class="btn btn-sm btn-primary">
+          Editar
+        </a>
+        <a href="/candidatura/{{this.id}}/exclusao" class="btn btn-sm btn-danger">
+          Excluir
+        </a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

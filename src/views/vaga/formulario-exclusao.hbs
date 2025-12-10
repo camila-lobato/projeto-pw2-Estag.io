@@ -1,0 +1,18 @@
+<h3>Excluir Vaga</h3>
+
+<form method="post" action="/vaga/{{vaga.id}}/exclusao?_method=post">
+
+  <p class="mt-3">
+    Tem certeza que deseja excluir a vaga:
+    <strong>{{vaga.titulo}}</strong>?
+  </p>
+
+  <button class="btn btn-danger mt-3">
+    Sim, excluir
+  </button>
+
+  <a href="/vaga" class="btn btn-secondary mt-3">
+    Cancelar
+  </a>
+
+</form>

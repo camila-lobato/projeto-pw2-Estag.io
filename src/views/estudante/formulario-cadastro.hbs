@@ -1,0 +1,61 @@
+<h3>Novo Estudante</h3>
+
+{{#if error}}
+  <div class="alert alert-danger">
+    {{#each error}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+<form method="post" action="/estudante/novo/salvar">
+
+  <div class="row">
+    <div class="col-md-8">
+      <label>Nome</label>
+      <input type="text" name="nome" class="form-control" value="{{old.nome}}" required>
+    </div>
+
+    <div class="col-md-4">
+      <label>Curso</label>
+      <input type="text" name="curso" class="form-control" value="{{old.curso}}" required>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <label>Email</label>
+      <input type="email" name="email" class="form-control" value="{{old.email}}" required>
+    </div>
+
+    <div class="col-md-6">
+      <label>Senha</label>
+      <input type="password" name="senha" class="form-control" required>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-6">
+      <label>Github</label>
+      <input type="text" name="github" class="form-control" value="{{old.github}}">
+    </div>
+
+    <div class="col-md-6">
+      <label>Portfólio</label>
+      <input type="text" name="portfolio" class="form-control" value="{{old.portfolio}}">
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <label>Biografia</label>
+      <textarea name="biografia" class="form-control" rows="4">{{old.biografia}}</textarea required>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <button class="btn btn-primary">Salvar</button>
+    <a href="/estudante" class="btn btn-secondary">Cancelar</a>
+  </div>
+
+</form>

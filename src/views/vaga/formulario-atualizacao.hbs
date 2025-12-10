@@ -1,0 +1,58 @@
+<h2>Editar Vaga</h2>
+
+{{#if error}}
+  <div class="alert alert-danger">
+    {{#each error}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+<form method="post" action="/vaga/{{vaga.id}}/atualizacao-salvar?_method=POST">
+
+  <div class="mb-3">
+    <label>Título da vaga</label>
+    <input type="text" name="titulo" class="form-control" value="{{vaga.titulo}}">
+  </div>
+
+  <div class="mb-3">
+    <label>Modalidade</label>
+    <select name="modalidade" class="form-control">
+      <option value="Presencial" {{#if (eq vaga.modalidade 'Presencial')}}selected{{/if}}>Presencial</option>
+      <option value="Híbrido" {{#if (eq vaga.modalidade 'Híbrido')}}selected{{/if}}>Híbrido</option>
+      <option value="Remoto" {{#if (eq vaga.modalidade 'Remoto')}}selected{{/if}}>Remoto</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label>Descrição</label>
+    <textarea name="descricao" class="form-control" rows="4">{{vaga.descricao}}</textarea>
+  </div>
+
+  <div class="mb-3">
+    <label>Localidade</label>
+    <input type="text" name="localidade" class="form-control" value="{{vaga.localidade}}">
+  </div>
+
+  <div class="mb-3">
+    <label>Salário</label>
+    <input type="number" step="0.01" name="salario" class="form-control" value="{{vaga.salario}}">
+  </div>
+
+  <div class="mb-3">
+    <label>Empresa</label>
+    <select name="empresa" class="form-control">
+      {{#each empresas}}
+        <option 
+          value="{{this.id}}" 
+          {{#if (eq this.id ../vaga.empresa.id)}}selected{{/if}}>
+            {{this.nome}}
+        </option>
+      {{/each}}
+    </select>
+  </div>
+
+  <button class="btn btn-primary">Atualizar</button>
+  <a href="/vaga" class="btn btn-secondary">Cancelar</a>
+
+</form>

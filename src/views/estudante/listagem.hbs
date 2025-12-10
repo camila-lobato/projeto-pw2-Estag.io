@@ -1,0 +1,33 @@
+<h3>Estudantes</h3>
+
+<a href="/estudante/novo" class="btn btn-sm btn-primary mb-3">Cadastrar Estudante</a>
+
+{{#if success}}
+<div class="alert alert-success">{{success}}</div>
+{{/if}}
+
+<table class="table table-bordered mt-3">
+  <thead class="thead-light">
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Curso</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each lista}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.nome}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.curso}}</td>
+      <td>
+        <a href="/estudante/{{this.id}}/editar" class="btn btn-sm btn-primary">Editar</a>
+        <a href="/estudante/{{this.id}}/excluir" class="btn btn-sm btn-danger">Excluir</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

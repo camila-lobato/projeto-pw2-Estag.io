@@ -1,0 +1,52 @@
+<h3>Vagas cadastradas</h3>
+
+<a href="/vaga/novo" class="btn btn-sm btn-primary mb-3"> Cadastrar Vaga
+</a>
+
+{{#if success}}
+  <div class="alert alert-success">
+    {{#each success}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{#if error}}
+  <div class="alert alert-danger">
+    {{#each error}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+<table class="table table-bordered mt-3">
+  <thead class="thead-light">
+    <tr>
+      <th>#</th>
+      <th>Título</th>
+      <th>Empresa</th>
+      <th>Modalidade</th>
+      <th>Localidade</th>
+      <th>Salário</th>
+      <th width="180">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    {{#each vagas}}
+    <tr>
+      <td>{{this.id}}</td>
+      <td>{{this.titulo}}</td>
+      <td>{{this.empresa.nome}}</td>
+      <td>{{this.modalidade}}</td>
+      <td>{{this.localidade}}</td>
+      <td>R$ {{this.salario}}</td>
+      <td>
+        <a href="/vaga/{{this.id}}/atualizacao" class="btn btn-sm btn-primary">Editar</a>
+        <a href="/vaga/{{this.id}}/exclusao" class="btn btn-sm btn-danger">Excluir</a>
+      </td>
+    </tr>
+    {{/each}}
+
+  </tbody>
+</table>

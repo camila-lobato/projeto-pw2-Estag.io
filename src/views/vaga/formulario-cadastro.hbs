@@ -1,0 +1,62 @@
+<h3>Nova Vaga</h3>
+
+{{#if error}}
+  <div class="alert alert-danger">
+    {{#each error}}
+      <p class="m-0">{{this}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+
+<form method="post" action="/vaga/novo/salvar">
+
+  <div class="row">
+    <div class="col-md-8">
+      <label>Título da vaga</label>
+      <input type="text" name="titulo" class="form-control" value="{{old.titulo}}" required>
+    </div>
+
+    <div class="col-md-4">
+      <label>Modalidade</label>
+      <select name="modalidade" class="form-control">
+        <option value="Presencial">Presencial</option>
+        <option value="Híbrido">Híbrido</option>
+        <option value="Remoto">Remoto</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col">
+      <label>Descrição</label>
+      <textarea name="descricao" class="form-control" rows="4">{{old.descricao}}</textarea required>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <label>Localidade</label>
+      <input type="text" name="localidade" class="form-control" value="{{old.localidade}}" required>
+    </div>
+
+    <div class="col-md-4">
+      <label>Salário</label>
+      <input type="number" step="0.01" name="salario" class="form-control" value="{{old.salario}}" required>
+    </div>
+
+    <div class="col-md-4">
+      <label>Empresa</label>
+      <select name="empresa" class="form-control">
+        {{#each empresas}}
+          <option value="{{this.id}}">{{this.nome}}</option>
+        {{/each}}
+      </select>
+    </div>
+  </div>
+
+  <div class="mt-4">
+    <button class="btn btn-primary">Salvar</button>
+    <a href="/vaga" class="btn btn-secondary">Cancelar</a>
+  </div>
+
+</form>
